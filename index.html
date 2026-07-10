@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad Ijaz-ul-Haq | Official Digital Portal</title>
+    <!-- Tailwind CSS Engine -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Space Grotesk & Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&family=Space+Grotesk:wght=400;500;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#05070F',
+                        cyberBlue: '#2563EB',
+                        blueNeon: '#3B82F6',
+                        blueGlow: '#60A5FA',
+                        slateGlass: 'rgba(9, 14, 26, 0.85)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel {
+            background: rgba(9, 14, 26, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-panel:hover {
+            border-color: #3B82F6;
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.2);
+            transform: translateY(-4px);
+        }
+        
+        .yt-card:hover {
+            border-color: #3B82F6 !important;
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.25) !important;
+        }
+        .tw-card:hover {
+            border-color: #ffffff !important;
+            box-shadow: 0 0 35px rgba(255, 255, 255, 0.25) !important;
+        }
+
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #3B82F6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Standard Typewriter Cursor/Caret Flash styling */
+        .type-node::after {
+            content: '|';
+            animation: blink 0.75s step-end infinite;
+            color: #3B82F6;
+            margin-left: 2px;
+            font-weight: bold;
+        }
+        .type-done::after {
+            display: none !important;
+        }
+        @keyframes blink {
+            from, to { color: transparent }
+            50% { color: #3B82F6; }
+        }
+
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        .loading-bar-fill {
+            animation: loadProgress 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-slate-200 font-sans antialiased overflow-x-hidden">
+
+    <!-- INTRO TEXT PRELOADER INTERFACE -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-obsidian flex flex-col items-center justify-center transition-all duration-700 ease-in-out">
+        <div class="text-center space-y-6 max-w-xl w-full px-4 flex flex-col items-center justify-center">
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-display font-bold tracking-[0.18em] sm:tracking-[0.25em] text-white animate-pulse whitespace-nowrap text-center">
+                IJAZ-UL-HAQ
+            </h1>
+            <p class="text-xs uppercase tracking-widest text-blueGlow/60 font-mono text-center">Initializing Statesman Dossier</p>
+            <div class="w-full h-[3px] bg-white/5 rounded-full overflow-hidden relative border border-white/5">
+                <div class="h-full bg-gradient-to-r from-cyberBlue via-blueNeon to-blueGlow loading-bar-fill shadow-[0_0_12px_#3B82F6]"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FUTURISTIC AMBIENT BACKGROUND GLOWS -->
+    <div class="fixed top-0 left-1/4 w-[600px] h-[600px] bg-cyberBlue/10 rounded-full blur-[150px] pointer-events-none -z-10"></div>
+    <div class="fixed bottom-0 right-1/4 w-[600px] h-[600px] bg-blueNeon/5 rounded-full blur-[180px] pointer-events-none -z-10"></div>
+
+    <!-- NAVIGATION HEADER -->
+    <nav class="sticky top-0 z-50 glass-panel border-b border-white/5 px-6 py-4 rounded-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyberBlue to-blueGlow flex items-center justify-center font-display font-bold text-white text-xl shadow-lg shadow-cyberBlue/30">
+                    IH
+                </div>
+                <div>
+                    <span class="font-display font-bold text-white tracking-wide block text-lg type-node" data-speed="25">IJAZ-UL-HAQ</span>
+                    <span class="text-xs text-blueNeon uppercase tracking-widest font-medium type-node" data-speed="20">Official MNA Portal</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 font-medium text-sm tracking-wide">
+                <a href="#hero" class="nav-link text-slate-300 hover:text-blueNeon type-node" data-speed="40">Legacy</a>
+                <a href="#profile" class="nav-link text-slate-300 hover:text-blueNeon type-node" data-speed="40">Biography</a>
+                <a href="#timeline" class="nav-link text-slate-300 hover:text-blueNeon type-node" data-speed="40">Career Journey</a>
+                <a href="#narrative" class="nav-link text-slate-300 hover:text-blueNeon type-node" data-speed="40">Life Story</a>
+                <a href="#social-hub" class="nav-link text-slate-300 hover:text-blueNeon type-node" data-speed="40">Connect Hub</a>
+            </div>
+            
+            <div>
+                <a href="#social-hub" class="px-5 py-2.5 rounded-lg bg-cyberBlue text-white font-semibold text-sm transition-all duration-300 hover:bg-blueGlow hover:shadow-lg hover:shadow-cyberBlue/40 tracking-wide inline-flex items-center gap-2 type-node" data-speed="30">
+                    Connect Hub
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-[90vh] flex items-center pt-12 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            <div class="lg:col-span-7 space-y-6">
+                <div class="inline-flex items-center space-x-2 bg-cyberBlue/10 border border-blueNeon/30 px-3 py-1.5 rounded-full text-xs text-blueGlow font-medium uppercase tracking-wider">
+                    <span class="w-2 h-2 rounded-full bg-blueNeon animate-pulse"></span>
+                    <span class="type-node" data-speed="20">President, Pakistan Muslim League (Z)</span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-display font-bold text-white tracking-tight leading-none">
+                    <span class="type-node" data-speed="25">Preserving Legacy,</span> <br>
+                    <span class="bg-gradient-to-r from-blueNeon via-cyan-400 to-blueGlow text-transparent bg-clip-text type-node" data-speed="25">Architecting Progress</span>
+                </h1>
+                
+                <p class="text-lg text-slate-400 max-w-xl leading-relaxed type-node" data-speed="12">
+                    Eldest son of former President General Muhammad Zia-ul-Haq. Veteran Statesman, Banker, and serving Member of the National Assembly of Pakistan.
+                </p>
+                
+                <div class="pt-4 flex flex-wrap gap-4">
+                    <a href="#timeline" class="px-6 py-3 rounded-xl bg-blueNeon text-white font-bold transition duration-300 hover:bg-blueGlow shadow-lg shadow-cyberBlue/20 type-node" data-speed="20">
+                        Explore Legislative Record
+                    </a>
+                    <a href="#narrative" class="px-6 py-3 rounded-xl border border-white/10 hover:border-blueNeon text-white glass-panel flex items-center justify-center type-node" data-speed="20">
+                        Read Life Story
+                    </a>
+                </div>
+            </div>
+            
+            <!-- RIGHT PROFILE DOCK CARD -->
+            <div class="lg:col-span-5 relative flex justify-center">
+                <div class="glass-panel w-85 sm:w-96 h-[520px] rounded-2xl overflow-hidden shadow-2xl group flex flex-col justify-between relative border border-white/5">
+                    
+                    <div class="absolute top-0 inset-x-0 z-20 p-5 flex justify-between items-start bg-gradient-to-b from-obsidian/80 via-obsidian/40 to-transparent">
+                        <i class="fa-solid text-3xl text-blueNeon/70 group-hover:text-blueNeon transition-colors duration-300 fa-building-columns"></i>
+                        <span class="text-xs uppercase tracking-widest text-slate-200 bg-obsidian/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 font-mono group-hover:text-blueGlow transition-colors type-node" data-speed="15">ID: MNA-NA163</span>
+                    </div>
+
+                    <div class="w-full h-[58%] overflow-hidden relative bg-gradient-to-br from-slate-900 to-obsidian flex items-center justify-center border-b border-white/5">
+                        <div class="text-center p-6">
+                            <i class="fa-solid fa-user-tie text-5xl text-blueNeon/40 mb-3 block"></i>
+                            <span class="text-xs uppercase font-mono tracking-widest text-slate-500 type-node" data-speed="20">Official Profile Active</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                    </div>
+
+                    <div class="p-6 bg-slate-950/90 flex-1 flex flex-col justify-between border-t border-white/5 relative z-10">
+                        <div class="space-y-3">
+                            <div class="border-l-4 border-blueNeon pl-4 transition-all group-hover:border-blueGlow">
+                                <p class="text-[10px] uppercase text-blueGlow font-semibold tracking-widest font-mono type-node" data-speed="15">Lineage Account</p>
+                                <h3 class="text-lg font-display font-bold text-white leading-snug type-node" data-speed="20">Son of the man who developed nation the great (General Zia-ul-Haq)</h3>
+                            </div>
+                            <p class="text-xs text-slate-400 leading-relaxed font-sans type-node" data-speed="10">
+                                Upholding structural foundations across generational epochs while representing the constituency of Bahawalnagar-IV.
+                            </p>
+                        </div>
+                        <div class="pt-4 border-t border-white/5 flex justify-between items-center text-xs font-mono text-blueNeon group-hover:text-blueGlow">
+                            <span class="flex items-center gap-1.5 text-emerald-400 font-bold type-node" data-speed="20">~70,000+ Votes (Est.)</span>
+                            <span class="text-slate-600">•</span>
+                            <span class="text-slate-300 bg-white/5 px-2 py-0.5 rounded border border-white/5 type-node" data-speed="20">Term: 24 - 29</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BIOGRAPHY VITAL STATS -->
+    <section id="profile" class="py-24 px-6 border-t border-white/5 bg-slate-950/20">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight type-node" data-speed="25">Core Overview & Vital Stats</h2>
+                <p class="text-slate-400 type-node" data-speed="15">Hover parameters below to initialize deep information modules.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-8 rounded-2xl glass-panel relative group">
+                    <div class="text-blueNeon text-2xl mb-4 transition-colors group-hover:text-blueGlow"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Academic Credentials</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4 type-node" data-speed="12">
+                        Earned his Master of Business Administration (MBA) from Southern Illinois University, USA, establishing a deep academic core in global finance.
+                    </p>
+                    <span class="text-xs font-mono text-slate-500 group-hover:text-blueNeon transition-colors type-node" data-speed="20">Global Enterprise Mindset</span>
+                </div>
+
+                <div class="p-8 rounded-2xl glass-panel relative group">
+                    <div class="text-blueNeon text-2xl mb-4 transition-colors group-hover:text-blueGlow"><i class="fa-solid fa-landmark"></i></div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Corporate & Early Career</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4 type-node" data-speed="12">
+                        Served as a global banking professional, climbing to Vice President & Regional Manager at Bank of America in Bahrain, alongside historical service in the Armoured Corps.
+                    </p>
+                    <span class="text-xs font-mono text-slate-500 group-hover:text-blueNeon transition-colors type-node" data-speed="20">Strategic Resource Executive</span>
+                </div>
+
+                <div class="p-8 rounded-2xl glass-panel relative group">
+                    <div class="text-blueNeon text-2xl mb-4 transition-colors group-hover:text-blueGlow"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="text-xl font-display font-bold text-white mb-2 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Political Vanguard</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed mb-4 type-node" data-speed="12">
+                        Stands as the chief architect and President of the Pakistan Muslim League (Z). Transitioned into public governance full-time in 1990.
+                    </p>
+                    <span class="text-xs font-mono text-slate-500 group-hover:text-blueNeon transition-colors type-node" data-speed="20">PML(Z) Command Matrix</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TIMELINE MAP -->
+    <section id="timeline" class="py-24 px-6 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight type-node" data-speed="25">Career Journey</h2>
+                <p class="text-slate-400 type-node" data-speed="15">Chronological summary tracking over three decades of core governmental portfolios.</p>
+            </div>
+
+            <div class="relative border-l border-white/10 pl-6 ml-4 space-y-12">
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-blueNeon border-4 border-obsidian group-hover:bg-blueGlow transition-colors"></div>
+                    <span class="text-xs font-mono text-blueNeon uppercase tracking-widest font-bold group-hover:text-blueGlow type-node" data-speed="20">Feb 2024 — Present</span>
+                    <h4 class="text-xl font-display font-bold text-white mt-1 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Returned to National Assembly (MNA)</h4>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed type-node" data-speed="12">
+                        Elected to represent constituency NA-163 (Bahawalnagar-IV) under the PML(Z) banner, active in national legislative assemblies.
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white/30 border-4 border-obsidian group-hover:bg-blueNeon transition-colors"></div>
+                    <span class="text-xs font-mono text-slate-500 uppercase tracking-widest font-bold group-hover:text-blueNeon type-node" data-speed="20">2004 — 2007</span>
+                    <h4 class="text-xl font-display font-bold text-white mt-1 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Federal Minister for Religious Affairs</h4>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed type-node" data-speed="12">
+                        Led strategic execution of interfaith frameworks, minority welfare packages, and nationwide spiritual infrastructure development policies.
+                    </p>
+                </div>
+
+                <div class="relative group">
+                    <div class="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-white/30 border-4 border-obsidian group-hover:bg-blueNeon transition-colors"></div>
+                    <span class="text-xs font-mono text-slate-500 uppercase tracking-widest font-bold group-hover:text-blueNeon type-node" data-speed="20">1990 — 1999</span>
+                    <h4 class="text-xl font-display font-bold text-white mt-1 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Federal Minister for Labour & Overseas Pakistanis</h4>
+                    <p class="text-slate-400 text-sm mt-2 leading-relaxed type-node" data-speed="12">
+                        Oversaw deep regulatory structures optimizing working standards and diaspora coordination pathways.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPLETE LIFE STORY NARRATIVE SECTION -->
+    <section id="narrative" class="py-24 px-6 border-t border-white/5 bg-slate-950/10">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16 space-y-4">
+                <span class="text-xs font-mono text-blueNeon uppercase tracking-widest font-bold px-3 py-1 bg-cyberBlue/10 border border-blueNeon/20 rounded-full type-node" data-speed="20">Comprehensive Biography</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight type-node" data-speed="25">The Complete Life Narrative</h2>
+                <p class="text-slate-400 max-w-xl mx-auto text-sm type-node" data-speed="15">An in-depth look at his path from early beginnings and private enterprise to the vanguard of Pakistani leadership.</p>
+            </div>
+
+            <div class="space-y-8">
+                <div class="p-8 rounded-2xl glass-panel border-l-4 border-blueNeon">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-display font-bold text-white type-node" data-speed="25">1. Birth, Lineage & Academic Foundations</h3>
+                        <span class="text-xs font-mono bg-blueNeon/10 text-blueGlow px-2 py-1 rounded type-node" data-speed="20">1952 — Early Years</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed type-node" data-speed="10">
+                        Born on December 22, 1952, in Rawalpindi, Muhammad Ijaz-ul-Haq was raised under a strong legacy of service as the eldest son of General Muhammad Zia-ul-Haq, who later served as the President of Pakistan. Prioritizing robust education, he completed his initial academic pursuits locally before traveling to the United States. He attended Southern Illinois University, where he earned a Master of Business Administration (MBA), equipping himself with a global approach toward fiscal systems and international commerce.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl glass-panel border-l-4 border-slate-500">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-display font-bold text-white type-node" data-speed="25">2. Corporate Leadership & Banking Career</h3>
+                        <span class="text-xs font-mono bg-white/5 text-slate-400 px-2 py-1 rounded type-node" data-speed="20">Pre-1990</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed type-node" data-speed="10">
+                        Before making his entry into state politics, Ijaz-ul-Haq carved out a successful professional career in the global banking industry. He joined Bank of America, one of the world's leading financial institutions, where his corporate performance led him to the position of Vice President and Regional Manager, operating out of Bahrain. His corporate financial tenure sharpened his strategic expertise in fiscal administration, regional asset tracking, and human resource systems.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl glass-panel border-l-4 border-cyberBlue">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-display font-bold text-white type-node" data-speed="25">3. Entrance to Politics & Federal Ministries</h3>
+                        <span class="text-xs font-mono bg-cyberBlue/10 text-blueNeon px-2 py-1 rounded type-node" data-speed="20">1990 — 2007</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed type-node" data-speed="10">
+                        Following the tragic passing of his father in 1988, Ijaz-ul-Haq returned to Pakistan to engage in public service full-time. He formally entered the political arena in 1990, winning a seat in the National Assembly. Throughout the 1990s, he effectively managed major state responsibilities as the Federal Minister for Labour, Manpower, and Overseas Pakistanis. Later, between 2004 and 2007, he stepped into leadership as the Federal Minister for Religious Affairs, leading nation-wide programs focused on interfaith harmony and organizational reforms.
+                    </p>
+                </div>
+
+                <div class="p-8 rounded-2xl glass-panel border-l-4 border-blueGlow">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-display font-bold text-white type-node" data-speed="25">4. Party Leadership & Current Present Era</h3>
+                        <span class="text-xs font-mono bg-blueGlow/10 text-white px-2 py-1 rounded type-node" data-speed="20">2024 — Present</span>
+                    </div>
+                    <p class="text-slate-300 text-sm leading-relaxed type-node" data-speed="10">
+                        As the foundational leader and President of the Pakistan Muslim League (Zia), he has kept a consistent legislative focus centered on political stability and civic progress. In the general elections, he successfully returned to the legislative forefront, securing his place as a Member of the National Assembly (MNA) for NA-163 (Bahawalnagar-IV). Today, he remains actively dedicated to developing infrastructure and advancing welfare programs for his constituency, standing as a prominent veteran voice in Pakistan's governance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOCIAL MATRIX HUB SECTION -->
+    <section id="social-hub" class="py-24 px-6 border-t border-white/5 bg-slate-950/40 relative">
+        <div class="max-w-6xl mx-auto space-y-12">
+            <div class="text-center max-w-2xl mx-auto space-y-3">
+                <span class="text-xs font-mono text-blueNeon uppercase tracking-widest font-bold px-3 py-1 bg-cyberBlue/10 border border-blueNeon/20 rounded-full type-node" data-speed="20">Secure Verification Nodes</span>
+                <h2 class="text-3xl md:text-5xl font-display font-bold text-white tracking-tight type-node" data-speed="25">Connect Hub</h2>
+                <p class="text-slate-400 text-sm type-node" data-speed="15">Access official statements, streaming video updates, and press dispatches directly across primary broadcast channels.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- YOUTUBE CARD -->
+                <a href="https://www.youtube.com/@IjazUlHaqOfficial" target="_blank" rel="noopener noreferrer" class="glass-panel yt-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between group hover:bg-cyberBlue/5">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-cyberBlue/10 border border-blueNeon/20 flex items-center justify-center text-blueNeon text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-youtube"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white tracking-wide mb-2 group-hover:text-blueGlow transition-colors type-node" data-speed="25">YouTube Video Channel</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed font-mono mb-4 type-node" data-speed="15">Official Video Broadcast Node. View National Assembly speeches, media debates, and policy addresses.</p>
+                    </div>
+                    <div class="flex flex-col pt-4 border-t border-white/5 mt-4">
+                        <div class="w-full h-[2px] bg-white/10 mb-3 rounded-full overflow-hidden">
+                            <div class="h-full bg-blueNeon w-[85%] group-hover:w-full transition-all duration-500 shadow-[0_0_8px_#3B82F6]"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-blueGlow">
+                            <span class="type-node" data-speed="20">@IjazUlHaqOfficial</span>
+                            <span class="flex items-center gap-1 type-node" data-speed="20">Open Channel</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- FACEBOOK NODE -->
+                <a href="https://facebook.com/M.IJAZULHAQ" target="_blank" rel="noopener noreferrer" class="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col justify-between group hover:bg-[#1877F2]/5">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-white/10 border border-blueNeon/20 flex items-center justify-center text-blueNeon text-2xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white tracking-wide mb-2 group-hover:text-blueNeon transition-colors type-node" data-speed="25">Facebook Community</h3>
+                        <p class="text-slate-400 text-xs leading-relaxed font-mono mb-4 type-node" data-speed="15">Central Public Ledger. Read live field dispatches, event galleries, and public announcements directly.</p>
+                    </div>
+                    <div class="flex flex-col pt-4 border-t border-white/5 mt-4">
+                        <div class="w-full h-[2px] bg-white/5 mb-3 rounded-full overflow-hidden">
+                            <div class="h-full bg-blueNeon w-[75%] group-hover:w-full transition-all duration-500 shadow-[0_0_8px_#3B82F6]"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-500 group-hover:text-blueNeon">
+                            <span class="type-node" data-speed="20">/M.IJAZULHAQ</span>
+                            <span class="flex items-center gap-1 type-node" data-speed="20">Open Profile</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- X (TWITTER) DISPATCH -->
+                <a href="https://twitter.com/ijazulhaq" target="_blank" rel="noopener noreferrer" class="glass-panel tw-card p-8 rounded-2xl border border-white/5 flex flex-col justify-between group hover:bg-white/5">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center text-white text-xl mb-6 group-hover:scale-110 transition-transform">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </div>
+                        <h3 class="text-2xl font-display font-bold text-white tracking-wide mb-2 flex items-center gap-2 type-node" data-speed="25">
+                            X Platform
+                        </h3>
+                        <p class="text-slate-400 text-xs leading-relaxed font-mono mb-4 type-node" data-speed="15">Real-Time Briefings. Track immediate text notifications, statements on national topics, and policy updates.</p>
+                    </div>
+                    <div class="flex flex-col pt-4 border-t border-white/5 mt-4">
+                        <div class="w-full h-[2px] bg-white/10 mb-3 rounded-full overflow-hidden">
+                            <div class="h-full bg-white w-[65%] group-hover:w-full transition-all duration-500 shadow-[0_0_10px_rgba(255,255,255,0.85)]"></div>
+                        </div>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400 group-hover:text-white">
+                            <span class="type-node" data-speed="20">@ijazulhaq</span>
+                            <span class="flex items-center gap-1 type-node" data-speed="20">Open Dispatch</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER MODULE -->
+    <footer class="py-12 px-6 border-t border-white/10 glass-panel rounded-none">
+        <div class="max-w-7xl mx-auto flex flex-col items-center justify-center gap-8 mb-6">
+            <div class="text-center">
+                <h2 class="text-2xl md:text-4xl font-display font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-blueNeon via-white to-blueGlow italic">
+                    "An MNA We Needed."
+                </h2>
+            </div>
+        </div>
+        <hr class="border-white/5 my-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <p class="text-xs uppercase tracking-widest text-blueNeon font-mono font-bold">Central Parliament Node</p>
+                <p class="text-sm text-slate-400 mt-1">A-408, Parliament Lodges, Islamabad, Pakistan.</p>
+            </div>
+            <div class="text-xs font-mono text-slate-500">
+                &copy; 2026 PML(Z) Digital Operations Cluster.
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL-BASED TYPEWRITER CORE SYSTEM SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nodes = document.querySelectorAll(".type-node");
+
+            // Cache original data strings and clear elements immediately
+            nodes.forEach(node => {
+                node.dataset.rawText = node.textContent.trim().replace(/\s+/g, ' ');
+                node.textContent = ""; 
+                node.style.opacity = "1";
+            });
+
+            // Universal Typewriter processor mechanism
+            function triggerTypewriter(element) {
+                if (element.classList.contains("type-started")) return;
+                element.classList.add("type-started");
+
+                const text = element.dataset.rawText;
+                const speed = parseInt(element.dataset.speed) || 20;
+                let charIndex = 0;
+
+                function appendChar() {
+                    if (charIndex < text.length) {
+                        element.textContent += text.charAt(charIndex);
+                        charIndex++;
+                        setTimeout(appendChar, speed);
+                    } else {
+                        element.classList.add("type-done");
+                    }
+                }
+                appendChar();
+            }
+
+            const observerOptions = {
+                root: null,
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const typewriterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        triggerTypewriter(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.classList.add('opacity-0');
+                    preloader.classList.add('invisible');
+                    
+                    nodes.forEach(node => typewriterObserver.observe(node));
+                }, 2300);
+            });
+        });
+    </script>
+
+</body>
+</html>
